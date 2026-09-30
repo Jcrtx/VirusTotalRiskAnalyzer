@@ -26,20 +26,46 @@ This is how I distinguished a high/med/low risk level.
 | High | 3+ malicious | Do not visit the URL or enter sensitive information. |
 
 ## Example Output 
-```
-Please enter your VirusTotal API key: #####################################
-Please enter the url you'd like to analyze: https://www.nike.com
 
-https://www.nike.com Analysis Completed.
+Low Risk:
+```
+Please enter your VirusTotal API key: ###############################
+Please enter the url you'd like to analyze: https://www.####.com
+
+https://www.####.com Analysis Completed.
 
 Analysis Results:
 Malicious: 0
 Suspicious: 0
-Harmless: 61
-Undetected: 31
+Harmless: 60
+Undetected: 32
 
 Risk Level: LOW
+Reason: No malicious or suspicious detections were reported.
 Recommendation: No significant threats were detected. Continue to use normal caution.
+
+Process finished with exit code 0
+
+```
+
+High Risk: 
+```
+Please enter your VirusTotal API key: ###############################
+Please enter the url you'd like to analyze: http://####.org
+
+http://####.org Analysis Completed.
+
+Analysis Results:
+Malicious: 3
+Suspicious: 2
+Harmless: 57
+Undetected: 30
+3 security vendors flagged this URL as malicious.
+2 security vendors flagged this URL as suspicious.
+
+Risk Level: HIGH
+Reason: The number of malicious detections meets the threshold for a high risk classification.
+Recommendation: Do not visit this URL or enter any sensitive information.
 ```
 
 ## Technologies Used
